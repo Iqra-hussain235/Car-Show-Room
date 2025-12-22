@@ -1,0 +1,177 @@
+/* Universal Reset to remove white space */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-wrapper {
+    overflow-x: hidden; /* Fixes the right side white space bug */
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 1. Hero Section with 3-Split Videos */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex; /* Makes videos sit side-by-side */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bgVideo {
+    width: 33.33vw; /* Each video takes exactly 1/3 of the screen */
+    height: 100%;
+    object-fit: cover;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    z-index: -1;
+}
+
+/* 2. Animated Content */
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.animated-text {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    letter-spacing: -2px;
+    animation: slideDown 1s ease-out forwards;
+}
+
+.sub-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    animation: fadeIn 2s ease-in;
+}
+
+.search-bar {
+    padding: 18px 40px;
+    width: 500px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glassmorphism */
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.4s;
+}
+
+.search-bar::placeholder { color: rgba(255,255,255,0.7); }
+.search-bar:focus {
+    width: 550px;
+    background: white;
+    color: black;
+}
+
+/* 3. Systematic Grid Section */
+.car-section {
+    padding: 80px 5%;
+    background: #0f0f0f; /* Dark premium theme */
+}
+
+.section-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card-link { text-decoration: none; }
+
+.car-card {
+    background: #1a1a1a;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #333;
+}
+
+.car-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: #ff4d4d; /* Red Accent */
+}
+
+.img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.car-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info { padding: 25px; color: white; }
+
+.brand-tag {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.price-text {
+    font-size: 1.3rem;
+    color: #2ecc71; /* Green color for price */
+    margin-top: 10px;
+}
+
+/* ✨ Animations */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 📱 Media Queries (Responsive) */
+@media (max-width: 1024px) {
+    .animated-text { font-size: 3.5rem; }
+    .search-bar { width: 90%; }
+}
+
+@media (max-width: 768px) {
+    /* Stack videos vertically or hide side ones on mobile */
+    .bgVideo:nth-child(2), .bgVideo:nth-child(3) { display: none; }
+    .bgVideo:nth-child(1) { width: 100vw; }
+    .animated-text { font-size: 2.5rem; }
+}
