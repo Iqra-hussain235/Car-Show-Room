@@ -1,0 +1,157 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+}
+
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-bar {
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Grid Layout */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.car-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-card h3 {
+  margin: 15px 0 5px;
+  color: #333;
+}
+
+/* Detail Page */
+.detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+  background: white;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border-radius: 20px;
+}
+
+.detail-image {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.btn-back {
+  padding: 10px 25px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* App.css additions */
+.auth-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Stays above the video */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+}
+
+.auth-nav .logo {
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+/* Prevent horizontal scrolling/white space */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* Auth Nav Styling */
+.auth-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.auth-nav .logo {
+  color: #ff4d4d;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Right side white space remove karne ke liye */
+  background-color: #000;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
